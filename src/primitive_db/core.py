@@ -1,4 +1,4 @@
-from decorators import (
+from primitive_db.decorators import (
     confirm_action,
     create_cacher,
     handle_db_errors,

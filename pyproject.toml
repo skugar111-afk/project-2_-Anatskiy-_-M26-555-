@@ -23,3 +23,9 @@ build-backend = "uv_build"
 dev = [
     "ruff>=0.17.1",
 ]
+
+[tool.setuptools]
+py-modules = ["decorators"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
