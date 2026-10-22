@@ -1,6 +1,11 @@
-#!/usr/bin/env python3
-def main() -> None:
-    print("DB project is running!")
+# src/primitive_db/main.py
+
+
+from .engine import run
+
+
+def main():
+    run()
 
 
 if __name__ == "__main__":
