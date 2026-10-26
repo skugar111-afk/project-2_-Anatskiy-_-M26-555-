@@ -1,7 +1,7 @@
 # src/primitive_db/main.py
 
 
-from .engine import run
+from primitive_db.engine import run
 
 
 def main():
