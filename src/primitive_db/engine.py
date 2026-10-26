@@ -41,6 +41,7 @@ def print_help():
 
 def run():
     """Главный цикл программы."""
+    welcome()
     print("***База данных***")
 
     while True:
