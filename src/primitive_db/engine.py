@@ -1,9 +1,8 @@
 import shlex
 
-from .core import create_table, drop_table, list_tables
-from .utils import load_metadata, save_metadata
-
-METADATA_FILE = "db_meta.json"
+from primitive_db.constants import META_FILE
+from primitive_db.core import create_table, drop_table, list_tables
+from primitive_db.utils import load_metadata, save_metadata
 
 
 def welcome():
@@ -24,7 +23,6 @@ def welcome():
             print("Неизвестная команда. Введите 'help' для справки.")
 
 
-METADATA_FILE = "db_meta.json"
 
 
 def print_help():
@@ -45,7 +43,7 @@ def run():
     print("***База данных***")
 
     while True:
-        metadata = load_metadata(METADATA_FILE)
+        metadata = load_metadata(META_FILE)
 
         try:
             user_input = input(">>>Введите команду: ")
@@ -77,7 +75,7 @@ def run():
             new_metadata, success = create_table(metadata, table_name, columns)
 
             if success:
-                save_metadata(METADATA_FILE, new_metadata)
+                save_metadata(META_FILE, new_metadata)
 
         elif command == "list_tables":
             if len(args) != 1:
@@ -94,7 +92,7 @@ def run():
             new_metadata, success = drop_table(metadata, args[1])
 
             if success:
-                save_metadata(METADATA_FILE, new_metadata)
+                save_metadata(META_FILE, new_metadata)
 
         elif command == "help":
             print_help()
@@ -105,3 +103,4 @@ def run():
 
         else:
             print(f"Функции {args[0]} нет. Попробуйте снова.")
+

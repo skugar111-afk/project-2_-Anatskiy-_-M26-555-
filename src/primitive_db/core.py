@@ -1,13 +1,11 @@
+from primitive_db.constants import VALID_TYPES
 from primitive_db.decorators import (
     confirm_action,
     create_cacher,
     handle_db_errors,
     log_time,
 )
-
-from .utils import load_table_data, save_table_data
-
-VALID_TYPES = {"int", "str", "bool"}
+from primitive_db.utils import load_table_data, save_table_data
 
 
 def _parse_column(spec):

@@ -2,7 +2,7 @@ import json
 import os
 from pathlib import Path
 
-DATA_DIR = "data"
+from primitive_db.constants import DATA_DIR
 
 
 def load_metadata(filepath: str | Path) -> dict:
